@@ -1,15 +1,24 @@
 #include<stdio.h>
+int factorial(int num)
+{
+    if(num == 1 || num == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return num * (factorial(num - 1));
+    }
+}
 int main()
 {
-    int n, factorical = 1;
-    printf("\nEnter Number: ");
-    scanf("%d",&n);
+    int n, ans = 0;
 
-    while(n >= 1)
-    {
-        factorical = n * factorical;
-        n--;
-    }
-    printf("Factorial: %d", factorical);
+    printf("Number: ");
+    scanf("%d", &n);
+    ans = factorial(n);
+    
+    printf("Factorial is: %d", ans);
+    
     return 0;
 }
